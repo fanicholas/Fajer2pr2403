@@ -2,10 +2,7 @@ package com.example.fajer2pr2403
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.RadioButton
-import android.widget.Toast
+import android.widget.*
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
@@ -36,33 +33,56 @@ class MainActivity : AppCompatActivity() {
         Wyslij.setOnClickListener {
 
             val result = StringBuilder()
-            result.append("Selected Items")
+            result.append("WYNIK")
             if (M.isChecked) {
-                result.append("\nPłeć: Mężczyzna")
+                result.append("\nPłeć: Mężczyzna\n")
 
             }
             if (K.isChecked) {
-                result.append("\nPłeć: Kobieta")
+                result.append("\nPłeć: Kobieta\n")
 
             }
             if (Sport.isChecked) {
-                result.append("\nSport")
+                result.append("Sport")
 
             }
             if (Muzyka.isChecked) {
-                result.append("\nMuzyka")
+                result.append("Muzyka,")
 
             }
             if (Turystyka.isChecked) {
-                result.append("\nTurystyka")
+                result.append("Turystyka,")
 
             }
             if (Gry.isChecked) {
-                result.append("\nGry")
+                result.append("Gry,")
 
             }
-            result.append("\nTotal: " + "Wiek:" + Wiek.text)
-            Toast.makeText(applicationContext, result.toString(), Toast.LENGTH_SHORT).show()
+            result.append(":To Zainteresowania\n " + "Wiek:" + Wiek.text)
+            findViewById<TextView>(R.id.textView4).text = result.toString()
+
+
+            M.setEnabled(false)
+            K.setEnabled(false)
+            Wiek.setEnabled(false)
+            Sport.setEnabled(false)
+            Muzyka.setEnabled(false)
+            Turystyka.setEnabled(false)
+            Gry.setEnabled(false)
+
+
         }
+        Odblokuj.setOnClickListener{
+            M.setEnabled(true)
+            K.setEnabled(true)
+            Wiek.setEnabled(true)
+            Sport.setEnabled(true)
+            Muzyka.setEnabled(true)
+            Turystyka.setEnabled(true)
+            Gry.setEnabled(true)
+
+        }
+
+
     }
 }
